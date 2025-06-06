@@ -2,8 +2,8 @@ package main
 
 import (
     "fmt"
-    "STEPIC/tasks"
-    "github.com/MyNameIsWhaaat/learningGo/tasks"   
+    "github.com/MyNameIsWhaaat/learningGo/tasks"
+ 
 ) 
 
 func main() {
@@ -50,6 +50,16 @@ func main() {
     fmt.Println()
     fmt.Println("Task 4:")
     m1 := []string{"go", "java", "go", "python"}
+    fmt.Println("Input: ", m1)
     m2 := make(map[string]int)
-    m2 = tasks.WordCount()
+    m2 = tasks.WordCount(m1)
+    fmt.Println("Output: ", m2)
+
+    fmt.Println()
+    fmt.Println("Task 5:")
+    m3 := map[string]string{"a":"x", "b":"y", "c":"x"}
+    fmt.Println("Input: ", m3)
+    m4 := make(map[string][]string)
+    m4 = tasks.InvertMap(m3)
+    fmt.Println("Output: ", m4)
 }

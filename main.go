@@ -2,7 +2,8 @@ package main
 
 import (
     "fmt"
-    "STEPIC/Tasks"   
+    "STEPIC/tasks"
+    "github.com/MyNameIsWhaaat/learningGo/tasks"   
 ) 
 
 func main() {
@@ -45,4 +46,10 @@ func main() {
     k5 = tasks.InsertAt(k5, 100, 7)
     fmt.Println(", index = 100, value = 7")
     fmt.Println("Output:", k5)
+
+    fmt.Println()
+    fmt.Println("Task 4:")
+    m1 := []string{"go", "java", "go", "python"}
+    m2 := make(map[string]int)
+    m2 = tasks.WordCount()
 }

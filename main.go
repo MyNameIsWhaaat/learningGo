@@ -142,4 +142,57 @@ func main() {
 	var areaer tasks.Areaer
 	areaer = tasks.Rectangle{X: 3, Y: 4}
 	fmt.Println(areaer.Area())
+	fmt.Print("\n")
+
+	shapes := []tasks.Shape{tasks.Circle{Radius: 5}, tasks.Rectangle{X: 4, Y: 2}}
+	for _, shape := range shapes{
+		fmt.Println("Площадь фигуры: ", shape.Area())
+		fmt.Println("Периметр фигуры: ", shape.Perimeter())
+	}
+	fmt.Print("\n")
+
+	robotDog := tasks.RobotDog{}
+	tasks.ActivateRobotDog(robotDog)
+	fmt.Print("\n\n")
+
+	filter := tasks.PositiveFilter{}
+
+	newFiltData := tasks.FilterInts([]int{5, -2, 4, 8, 0, 10}, filter)
+	fmt.Print(newFiltData)
+	fmt.Print("\n\n")
+
+	stringers := []tasks.Stringer{tasks.Book{Title: "Улитка на склоне", Author: "Б. и А. Стругацкие"}, tasks.Move{Title: "Призрак", Director: "Ф. Бондарчук"}}
+	for _, stringer := range stringers{
+		tasks.Stringers(stringer)
+		fmt.Print("\n")
+	}
+	fmt.Print("\n")
+
+	x := 10 
+	fmt.Println(x)
+
+	tasks.SetToZero(&x)
+
+	fmt.Println(x)
+	fmt.Print("\n")
+
+	x, y := 1, 2
+	tasks.Swap(&x, &y)
+	fmt.Println(x, y) // Должно быть 2 1
+	fmt.Print("\n")
+
+	p := tasks.NewInt(42)
+	fmt.Println(*p)	
+	fmt.Print("\n")
+
+	personPoint := tasks.Person{Name: "Alice", Age: 20}
+	tasks.Birthday(&personPoint)
+	fmt.Println(personPoint.Age)
+	fmt.Print("\n")
+
+	var IsNilA *int
+	fmt.Println(tasks.IsNil(IsNilA)) // true
+
+	IsNilB := 10
+	fmt.Println(tasks.IsNil(&IsNilB)) // false
 }
